@@ -1,0 +1,231 @@
+@charset "utf=8";
+@use 'mixin' as mix;
+
+// 変数
+
+.access {
+    &__bg {
+        background-color: #F6F4EF;
+        position: relative;
+        padding-bottom: 10%;
+        @include mix.mq(pc) {
+            padding-bottom: 5%;
+        }
+    }
+
+    &__page-header {
+        font-size: 4rem;
+        font-family: 'Righteous';
+        margin-left: 41%;
+        padding-top: 7%;
+        padding-bottom: 3%;
+
+        @include mix.mq(pc) {
+            font-size: 6vw;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            height: 2px;
+            width: 50vw;
+            top: 60%;
+            right: 60%;
+            background: orange;
+        }
+    }
+   
+
+    &__flex {
+        display: flex;
+        justify-content: space-between;
+
+        @include mix.mq(pc) {
+            display: block;
+        }
+
+    }
+
+    &__map {
+        width: 70%;
+
+        @include mix.mq(pc) {
+            width: 100%;
+        }
+       
+    }
+    &__map1{
+        @include mix.mq(sp) {
+            height: 200px;
+        }
+    }
+
+    &__info {
+        width: 25%;
+
+        @include mix.mq(pc) {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 5% 13%;
+        }
+
+        @include mix.mq(tab) {
+            padding: 5% 6%;
+        }
+
+        & ul {
+            list-style-type: none;
+        }
+
+        &-item {
+            width: 100%;
+            line-height: 2;
+
+            @include mix.mq(pc) {
+                background-color: #fff;
+                padding: 2%;
+            }
+
+            @include mix.mq(tab) {
+                width: 42%;
+            }
+
+            @include mix.mq(sp) {
+                width: 48%;
+            }
+
+        }
+
+        &-subitem {
+            width: 100%;
+            line-height: 2;
+
+            @include mix.mq(pc) {
+                margin-left: 20%;
+                background-color: #fff;
+                padding: 2%;
+            }
+
+            @include mix.mq(tab) {
+                margin-left: 10%;
+                width: 42%;
+            }
+
+            @include mix.mq(sp) {
+                width: 48%;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        @include mix.mq(tab) {
+            font-size: 1rem;
+        }
+    }
+
+    &__text {
+        text-align: left;
+        white-space: nowrap;
+
+        @include mix.mq(tab) {
+            font-size: 2vw;
+        }
+
+        & span {
+            font-size: 2vw;
+            padding-left: 1vw;
+        }
+    }
+}
+
+iframe {
+    width: 100%;
+}
+
+
+/*contact*/
+.contact {
+    position: relative;
+
+    &__page-header {
+        font-size: 4rem;
+        font-family: 'Righteous';
+        margin-left: 41%;
+        padding-top: 7%;
+        padding-bottom: 3%;
+
+        @include mix.mq(pc) {
+            font-size: 6vw;
+        }
+        @include mix.mq(tab) {
+           margin-left: 39%;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            height: 2px;
+            width: 45vw;
+            top: 60%;
+            right: 60%;
+            background: orange;
+            @include mix.mq(tab) {
+                right: 62%;
+            }
+        }
+    }
+    &__img{
+        width: 10%;
+    }
+
+    &__text {
+        text-align: center;
+        font-size: 1.8vw;
+        font-weight: normal;
+
+        @include mix.mq(pc) {
+            font-size: 1.6vw;
+        }
+        @include mix.mq(sp) {
+            font-size: 12px;
+        }
+
+        @include mix.mq(min) {
+            font-size: 10px;
+        }
+    }
+
+    &__box {
+        box-sizing: border-box;
+        border: 2px solid #282926;
+        margin: 10% auto;
+        text-align: center;
+        width: 75%;
+
+        @include mix.mq(pc) {
+            margin: 7% auto;
+        }
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        gap: 2vw;
+        padding: 4% 0 4% 24vw;
+
+        @include mix.mq(pc) {
+            padding: 4% 0 4% 27vw;
+        }
+        @include mix.mq(tab) {
+            padding: 4% 0 4% 26vw;
+        }
+       
+    }
+
+    &__number,
+    &__addres {
+        font-size: 2vw;
+    }
+}

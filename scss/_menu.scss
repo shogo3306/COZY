@@ -1,0 +1,238 @@
+@charset "utf=8";
+@use 'mixin' as mix;
+
+// 変数
+$main-font: 5vw;
+$sub-font: 1.5rem;
+$sp-font: 12px;
+$min-font: 10px;
+
+.menu {
+    &__inner {
+        padding: 0 30px;
+        padding-bottom: 5%;
+        width: 50%;
+    }
+
+    &__img-w {
+        width: 100%;
+        height: auto;
+    }
+
+    &__bg {
+        background-color: #F6F4EF;
+        background-size: cover;
+    }
+
+    &__page-header {
+        position: relative;
+        font-size: 4rem;
+        margin-left: 45vw;
+        font-family: 'Righteous';
+        padding-top: 6%;
+        padding-bottom: 5%;
+
+        @include mix.mq(pc) {
+            font-size: 6vw;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            height: 2px;
+            width: 50vw;
+            bottom: 42%;
+            right: 100%;
+            background: orange;
+        }
+    }
+
+    &__ly {
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    &__cafe-coffee-title {
+        background: url(../img/menu-coffee.png) no-repeat;
+        padding-top: 30%;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        font-weight: 300;
+
+        & h3 {
+            position: absolute;
+            top: 50%;
+
+            left: 50%;
+            letter-spacing: 4px;
+            font-size: $main-font;
+            transform: translateY(-50%) translateX(-50%);
+            font-family: "Righteous";
+            color: #F6F4EF;
+
+        }
+    }
+
+    &__cafe h4 {
+
+        font-weight: 300;
+        font-family: "Oswald", sans-serif;
+        text-align: center;
+        margin: 5%;
+        letter-spacing: 4px;
+
+        & span {
+            border-bottom: 1px solid #231815;
+            font-size: 2rem;
+            padding: 0;
+
+            @include mix.mq(ro) {
+                font-size: $sub-font;
+            }
+        }
+    }
+
+    &__cafe-list {
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+
+        & p {
+            font-size: 1.4vw;
+            font-weight: 300;
+
+            @include mix.mq(tab) {
+                font-size: 1.8vw;
+                bottom: -80px;
+            }
+        }
+    }
+
+    &__cafe_pasta_title {
+        background: url(../img/menu-pasta.png);
+        padding-top: 30%;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        font-weight: 300;
+
+        & h3 {
+            position: absolute;
+            top: 50%;
+
+            left: 50%;
+            letter-spacing: 4px;
+            font-size: $main-font;
+            transform: translateY(-50%) translateX(-50%);
+            font-family: "Righteous";
+            color: #F6F4EF;
+        }
+    }
+
+
+    &__cafe_dessert_title {
+        background: url(../img/menu-dessert.png) no-repeat;
+        padding-top: 30%;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        font-weight: 300;
+
+        & h3 {
+            position: absolute;
+            top: 50%;
+
+            left: 50%;
+            letter-spacing: 4px;
+            font-size: $main-font;
+            transform: translateY(-50%) translateX(-50%);
+            font-family: "Righteous";
+            color: #F6F4EF;
+        }
+    }
+
+    &__price {
+        font-size: $sub-font;
+        padding: 3% 0;
+        font-weight: 300;
+
+        @include mix.mq(tab) {
+            width: 43%;
+        }
+
+        @include mix.mq(ro) {
+            font-size: 1rem;
+        }
+    }
+
+    &__normal {
+        width: 100%;
+        position: relative;
+        padding: 5% 0;
+        font-size: 16px;
+
+        @include mix.mq(sp) {
+            font-size: $min-font;
+        }
+    }
+}
+
+h5 {
+    font-size: $sub-font;
+    padding-bottom: 3%;
+
+    @include mix.mq(ro) {
+        font-size: 0.8rem;
+    }
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+    text-align: left;
+    font-weight: 300;
+}
+
+td {
+    font-size: 20px;
+    text-align: right;
+    padding: 2% 0;
+    color: #000;
+    vertical-align: bottom;
+    white-space: nowrap;
+    font-weight: 300;
+
+    @include mix.mq(ro) {
+        font-size: 13px;
+    }
+
+    @include mix.mq(sp) {
+        font-size: $sp-font;
+    }
+
+    @include mix.mq(min) {
+        font-size: $min-font;
+    }
+}
+
+th {
+    font-size: 20px;
+    font-weight: 300;
+    padding: 2% 0;
+    color: #000;
+
+    @include mix.mq(ro) {
+        font-size: 13px;
+    }
+
+    @include mix.mq(sp) {
+        font-size: $sp-font;
+    }
+
+    @include mix.mq(min) {
+        font-size: $min-font;
+    }
+}

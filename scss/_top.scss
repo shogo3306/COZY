@@ -1,0 +1,552 @@
+@charset "utf=8";
+@use 'mixin' as mix;
+
+// 変数
+$main-color: #282926;
+$w-color: #ffffff;
+$main-font: 1.4vw;
+$page-title-font: 4vw;
+$sp-font: 12px;
+$min-font: 10px;
+
+
+html {
+    font-size: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    font-family: Righteous;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.main-visual {
+    background-color: $main-color;
+    color: $w-color;
+    display: flex;
+    justify-content: center;
+    padding-top: 4%;
+
+    @include mix.mq(min) {
+        align-items: flex-end;
+    }
+
+    &__wrap {
+        position: relative;
+        margin-right: 13%;
+        padding-top: 4%;
+
+        @include mix.mq(tab) {
+            padding-top: 2%;
+        }
+
+        @include mix.mq(sp) {
+            padding-top: 1%;
+        }
+    }
+
+    &__img {
+        width: 40vw;
+    }
+
+    &__title {
+        font-family: 'Righteous';
+        font-size: 2.5vw;
+        padding-left: 10%;
+    }
+
+    &__subtitle {
+        font-size: $main-font;
+        padding-top: 8%;
+        padding-left: 10%;
+
+        @include mix.mq(tab) {
+            font-size: 1.8vw;
+        }
+
+        @include mix.mq(sp) {
+            display: none;
+        }
+    }
+
+    &__text {
+        font-size: $main-font;
+        line-height: 4vw;
+        padding-top: 10%;
+        width: 36vw;
+        padding-left: 10%;
+        font-family: 'Noto Sans JP', sans-serif;
+
+        @include mix.mq(tab) {
+            font-size: 1.8vw;
+        }
+
+        @include mix.mq(sp) {
+            font-size: $sp-font;
+        }
+
+        @include mix.mq(min) {
+            font-size: $min-font;
+        }
+    }
+}
+
+.swiper--wrapper {
+    /* wrapperのサイズを調整 */
+    width: 6.5vw;
+}
+
+.swiper-slide {
+    /* スライドのサイズを調整、中身のテキスト配置調整、背景色 */
+    color: $w-color;
+    width: 6.5vw;
+    text-align: center;
+}
+
+.swiper-slide>img {
+    width: 68%;
+
+    @include mix.mq(sp) {
+        width: 80%;
+    }
+
+    @include mix.mq(min) {
+        width: 72%;
+    }
+}
+
+.fadeUp {
+    animation-name: fadeUpAnime;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+
+.fadeUpTrigger {
+    opacity: 0;
+}
+
+.top__about {
+    background-color: $main-color;
+    color: $w-color;
+    display: flex;
+    justify-content: center;
+    gap: 12vw;
+    padding-top: 15%;
+    padding-bottom: 10%;
+
+    @include mix.mq(pc) {
+        gap: 10vw;
+    }
+
+    &-img {
+        width: 35vw;
+        padding-top: 10vw;
+    }
+
+    &__text {
+        font-size: $main-font;
+        line-height: 5vw;
+        padding-top: 8%;
+
+        @include mix.mq(tab) {
+            font-size: 1.8vw;
+        }
+
+        @include mix.mq(sp) {
+            font-size: $sp-font;
+            padding-top: 13%;
+        }
+
+        @include mix.mq(min) {
+            font-size: $min-font;
+        }
+    }
+
+    &-content {
+        position: relative;
+        width: 35vw;
+    }
+
+    &-btn {
+        position: absolute;
+        bottom: 10%;
+        left: 60%;
+    }
+}
+
+
+.btn {
+    padding: 3% 8%;
+    background-color: $w-color;
+    color: $main-color;
+    border-radius: 4px;
+    font-size: $main-font;
+}
+
+.button {
+    position: relative;
+    display: block;
+    padding: 2% 4%;
+    background-color: $main-color;
+    border: 1px solid $w-color;
+    color: $w-color;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 21vw;
+    margin-top: 4vw;
+    font-size: $main-font;
+
+    @include mix.mq(tab) {
+        margin-left: 18vw;
+
+    }
+
+    @include mix.mq(sp) {
+        margin-left: 15vw;
+    }
+
+    @include mix.mq(min) {
+        margin-top: 0;
+    }
+
+    &:hover {
+        box-shadow: 0 5px 10px #F6F4EF;
+        transform: translate(0, -5px);
+    }
+}
+
+.button_1 {
+    position: absolute;
+    top: 69%;
+    right: 5%;
+    font-size: $main-font;
+    margin-left: 10vw;
+    
+
+    @include mix.mq(tab) {
+        padding: 4% 3%;
+        top: 66%;
+    }
+
+
+    @include mix.mq(ro) {
+        padding: 3% 2%;
+        right: 2%;
+        top: 71%;
+    }
+
+    @include mix.mq(sp) {
+        font-size: $sp-font;
+        padding: 3% 2%;
+        top: 77%;
+        right: 1%;
+    }
+
+    @include mix.mq(min) {
+        font-size: $min-font;
+        top: 84%;
+        padding: 2%;
+    }
+    &:hover {
+        box-shadow: 0 5px 10px #282926;
+        transform: translate(0, -5px);
+    }
+
+}
+
+.button_2 {
+    top: 68%;
+
+    @include mix.mq(tab) {
+        top: 69%;
+
+    }
+
+    @include mix.mq(sp) {
+        top: 72%;
+    }
+
+    @include mix.mq(min) {
+        top: 82%;
+    }
+}
+
+.button:hover::after {
+    animation: arrow .5s;
+}
+
+@keyframes arrow {
+    100% {
+        transform: rotateX(360deg);
+    }
+}
+
+.fade-in {
+    font-size: 40px;
+    opacity: 0;
+    animation-name: About;
+    animation-duration: 7s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes About {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    50% {
+        opacity: 5;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.page-header {
+    position: relative;
+    font-size: $page-title-font;
+    margin-left: 1vw;
+    font-family: 'Righteous';
+
+    &::before {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 15vw;
+        bottom: 40%;
+        right: 102%;
+        background: orange;
+    }
+}
+
+.menu {
+    background-image: url(../img/haikei.webp);
+    background-size: cover;
+    padding: 0% 3% 5%;
+
+    @include mix.mq(sp) {
+        padding-bottom: 8%;
+    }
+
+    &__page-header1 {
+        text-align: center;
+        font-size: $page-title-font;
+        font-weight: bold;
+        font-family: 'Righteous';
+        padding-top: 5%;
+    }
+
+    &__text {
+        text-align: center;
+        font-size: 1.8vw;
+        padding-bottom: 2%;
+        padding-top: 2%;
+
+        @include mix.mq(sp) {
+            font-size: $sp-font;
+        }
+
+        @include mix.mq(min) {
+            font-size: $min-font;
+        }
+    }
+
+    &__item {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__top-title {
+        padding: 0% 12%;
+    }
+
+    &__title {
+        font-size: 2.5vw;
+        align-items: center;
+        padding-top: 5%;
+
+        @include mix.mq(tab) {
+            padding: 5% 0;
+        }
+
+        @include mix.mq(sp) {
+            font-size: 16px;
+        }
+
+        & span {
+            color: orange;
+            font-size: $page-title-font;
+        }
+    }
+
+    &__sub-title {
+        font-size: $main-font;
+        line-height: 0.5vw;
+        margin-left: 5vw;
+        margin-bottom: 5%;
+
+        @include mix.mq(tab) {
+            display: none;
+        }
+    }
+
+    &__contents {
+        width: 33%;
+    }
+
+    &__contents1 {
+        width: 45%;
+        background-color: $w-color;
+        padding: 3%;
+        position: relative;
+
+        &-text {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &-img &-img1 {
+        width: 50%;
+    }
+
+
+    &__title1 {
+        font-size: 2.2vw;
+
+        @include mix.mq(sp) {
+            font-size: $sp-font;
+        }
+
+    }
+
+    &__info {
+        font-size: $main-font;
+
+        @include mix.mq(sp) {
+            padding-right: 5%;
+            font-size: $min-font;
+        }
+
+
+    }
+
+    &__sub-title1 {
+        font-size: $main-font;
+        margin-top: 3%;
+
+        @include mix.mq(tab) {
+            display: none;
+        }
+    }
+
+    &__text1 {
+        font-size: $main-font;
+        margin-top: 5%;
+        text-align: initial;
+
+        @include mix.mq(sp) {
+            font-size: $sp-font;
+        }
+
+        @include mix.mq(min) {
+            font-size: $min-font;
+        }
+    }
+
+    &__img1 {
+        margin-top: 8%;
+        width: 60%;
+    }
+
+    &-btn {
+        position: absolute;
+        background-color: $main-color;
+        color: $w-color;
+        padding: 2% 4%;
+        right: 5vw;
+        bottom: 20%;
+    }
+}
+
+// news
+.news {
+    &__ly {
+        background-color: #F6F4EF;
+        padding-left: 13vw;
+        padding-right: 13vw;
+        padding-top: 5%;
+        position: relative;
+    }
+
+    &-page-header {
+        font-family: 'Righteous';
+        font-size: $page-title-font;
+        text-align: center;
+        padding-top: 5%;
+    }
+
+    &__info {
+        padding: 5% 14%;
+
+        @include mix.mq(min) {
+            padding: 5% 3%;
+        }
+    }
+
+    &__content {
+        padding: 4% 3%;
+        background: $w-color;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        list-style: none;
+        font-size: $main-font;
+        display: flex;
+
+        @include mix.mq(sp) {
+            font-size: 11px;
+        }
+
+        @include mix.mq(min) {
+            font-size: $min-font;
+        }
+
+        &:last-child {
+            border-bottom: 1px solid black;
+        }
+
+        & span {
+            width: 65vw;
+            margin-left: 3vw;
+
+            @include mix.mq(min) {
+                width: 71vw;
+
+            }
+        }
+    }
+}
